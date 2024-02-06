@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ÜçgendeAlanHesaplama {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		int a, b, c;
+
+		System.out.print("Üçgenin 1. kenarını girin: ");
+		a = scanner.nextInt();
+		System.out.print("Üçgenin 2. kenarını girin: ");
+		b = scanner.nextInt();
+		System.out.print("Üçgenin 3. kenarını girin: ");
+		c = scanner.nextInt();
+
+		int u = (a + b + c) / 2;
+
+		double alan = u * (u - a) * (u - b) * (u - c);
+
+		double alan1 = Math.sqrt(alan);
+		System.out.println(alan1);
+
+	}
+
+}
