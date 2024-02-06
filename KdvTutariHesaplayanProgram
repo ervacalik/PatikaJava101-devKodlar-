@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class KdvTutariHesaplayanProgram {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		float kdvorani = 0.18F;
+
+		System.out.print("Ürünün fiyatını girin: ");
+		float fiyat = scanner.nextFloat();
+
+		if (fiyat > 0 && fiyat <= 1000) {
+			float kdv = kdvorani * fiyat;
+
+			System.out.println("KDV'siz fiyat: " + fiyat);
+			System.out.println("KDV'li fiyat: " + (fiyat + kdv));
+			System.out.println("KDV tutarı: " + kdv);
+
+		} else {
+			kdvorani = 0.08F;
+			float kdv = kdvorani * fiyat;
+
+			System.out.println("KDV'siz fiyat: " + fiyat);
+			System.out.println("KDV'li fiyat: " + (fiyat + kdv));
+			System.out.println("KDV tutarı: " + kdv);
+
+		}
+
+	}
+
+}
