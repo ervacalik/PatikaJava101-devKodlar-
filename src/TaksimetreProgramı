@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class TaksimetreProgramı {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println(" Mesafeyi giriniz(km): ");
+		int mesafe = scanner.nextInt();
+
+		double km = 2.20;
+		double ücret = 10 + (km * mesafe);
+		if (ücret <= 20) {
+			System.out.println("Borcunuz 20 TL'dir");
+
+		} else {
+			System.out.println("Ücretiniz " + ücret + " TL'dir");
+		}
+
+	}
+}
