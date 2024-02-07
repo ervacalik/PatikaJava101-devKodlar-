@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class KullaniciGirisi {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Kullanıcı adınızı girin: ");
+		String ad = scanner.nextLine();
+
+		System.out.print("Şifrenizi girin: ");
+		String sifreString = scanner.nextLine();
+
+		if (ad.equalsIgnoreCase("Patika") && sifreString.equalsIgnoreCase("java123")) {
+			System.out.println("Giriş yaptınız");
+
+		} else if (ad.equalsIgnoreCase("Patika") && sifreString != "java123") {
+			System.out.println("Şifrenizi yanlış girdiniz!!!");
+			System.out.println("Şifrenizi değişitirmak ister misiniz?");
+			System.out.println("1-Evet\n2-Hayır");
+			int cevap = scanner.nextInt();
+			scanner.nextLine();
+			switch (cevap) {
+			case 1:
+				System.out.println("Yeni şifrenizi girin ");
+				String sifreyeni = scanner.nextLine();
+				
+				if (sifreyeni.equalsIgnoreCase("java123")) {
+					System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+
+				} else {
+					System.out.println("Şifre oluşturuldu");
+				}
+			case 2:
+				System.out.println("İşleminiz sonlandırılıyor...");
+
+				break;
+
+			default:
+				System.out.println("1 veya 2 rakamını seçiniz");
+				break;
+			}
+		}
+		else {
+			System.out.println("Hatalı giriş yaptınız...");
+		}
+
+	}
+
+}
