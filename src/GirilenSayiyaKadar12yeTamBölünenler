@@ -1,0 +1,25 @@
+
+import java.util.Scanner;
+
+public class GirilenSayiyaKadar12yeTamBölünenler {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Sayı Giriniz: ");
+		int sayi = scanner.nextInt();
+
+		for (int i = 0; i < sayi; i++) {
+			if (sayi % 3 == 0 && sayi % 4 == 0) {
+				System.out.println(sayi);
+
+			} else {
+				break;
+			}
+
+		}
+
+	}
+
+}
