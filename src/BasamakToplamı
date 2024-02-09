@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class BasamakToplamı {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Sayı Giriniz: ");
+		int sayi = scanner.nextInt();
+		int toplam = 0;
+
+		while (sayi > 0) {
+			int a = sayi % 10;
+			toplam += a;
+			sayi = sayi / 10;
+
+		}
+		System.out.println("Toplam: "+toplam);
+
+	}
+
+}
