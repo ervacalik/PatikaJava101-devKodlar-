@@ -1,0 +1,24 @@
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class UsluSayiHesapla {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Üssü alınacak sayıyı girin: ");
+		int alt = scanner.nextInt();
+
+		System.out.print("Üssü girin: ");
+		int üs = scanner.nextInt();
+
+		int sonuc = 1;
+		for (int i = 1; i <= üs; i++) {
+			sonuc*=alt;
+
+		}
+
+		System.out.println("Sonuç: "+ sonuc);
+	}
+
+}
