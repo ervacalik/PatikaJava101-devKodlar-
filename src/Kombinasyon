@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Kombinasyon {
+	
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("Kümedeki eleman sayısını girin: ");
+		int n= scanner.nextInt();
+		
+		System.out.print("Kaçlı kombinasyon yapılacağını girin: ");
+		int r = scanner.nextInt();
+		
+		int faktn=1;
+		int faktnr=1;
+		int faktr=1;
+		
+		for (int i = 1; i <= n; i++) {
+			faktn*=i;
+			
+		}
+		
+		for (int i = 1; i <= (n-r); i++) {
+			faktnr*=i;
+		}
+		
+		for (int i = 1; i <= r; i++) {
+			faktr*=i;
+		}
+		
+		
+		
+		
+		int kombinasyon= faktn/(faktr*faktnr) ;
+		
+		System.out.println(n +" elemanlı kümenin "+ r+"'li kombinasyonu: "+ kombinasyon);
+		
+		
+		
+	}
+
+}
