@@ -1,0 +1,33 @@
+import javax.sound.midi.Soundbank;
+
+public class PalindromikSayiBul {
+
+	public static void main(String[] args) {
+
+		System.out.println(isPalindrom(2442));
+
+	}
+
+	static boolean isPalindrom(int number) {
+
+		int temp = number;
+		int terssayi = 0;
+		int sonbasamak = 0;
+
+		while (temp != 0) {
+			sonbasamak = temp % 10;
+			terssayi = (terssayi * 10) + sonbasamak;
+			temp = temp / 10;
+
+		}
+		if (number == terssayi) {
+			return true;
+
+		} else {
+			return false;
+
+		}
+
+	}
+
+}
