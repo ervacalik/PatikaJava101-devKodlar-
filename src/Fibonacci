@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Fibonacci {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Eleman sayısını girin: ");
+		int n = scanner.nextInt();
+		
+		int x = 0;
+		int y = 1;
+		
+		System.out.print("0 1 ");
+
+		for (int i = 1; i < n; i++) {
+			int k = x;
+			System.out.print((x + y)+" ");
+			x = y;
+			y = k + y;
+
+		}
+	}
+}
