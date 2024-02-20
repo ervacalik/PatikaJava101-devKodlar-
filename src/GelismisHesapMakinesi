@@ -1,0 +1,144 @@
+import java.util.Scanner;
+
+public class GelismisHesapMakinesi {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		int secim;
+		System.out.println("1- Toplama İşlemi\r\n" + "2- Çıkarma İşlemi\r\n" + "3- Çarpma İşlemi\r\n"
+				+ "4- Bölme işlemi\r\n" + "5- Üslü Sayı Hesaplama\r\n" + "6- Faktoriyel Hesaplama\r\n"
+				+ "7- Mod Alma\r\n" + "8- Dikdörtgen Alan ve Çevre Hesabı");
+
+		do {
+			System.out.print("Yapmak istediğiniz işlemi seçiniz: ");
+			secim = scanner.nextInt();
+			switch (secim) {
+			case 1:
+				toplama();
+				break;
+			case 2:
+				cikarma();
+				break;
+			case 3:
+				carpma();
+				break;
+			case 4:
+				bolme();
+				break;
+			case 5:
+				üslüsayi();
+				break;
+
+			case 6:
+				faktoriyel();
+				break;
+
+			case 7:
+				modalma();
+				break;
+			case 8:
+				cevrealanhesap();
+				break;
+
+			default:
+				break;
+			}
+
+		} while (secim != 0);
+
+	}
+
+	static void toplama() {
+		Scanner scanner = new Scanner(System.in);
+		int top = 0;
+		System.out.print("Kaç adet sayı gireceksiniz: ");
+		int sayi = scanner.nextInt();
+		for (int i = 1; i <= sayi; i++) {
+			System.out.print(i + ". sayı: ");
+			int sayi1 = scanner.nextInt();
+			top += sayi1;
+
+		}
+
+		System.out.println("Toplam sonucu: " + top);
+
+	}
+
+	static void cikarma() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Birinci sayıyı girin: ");
+		int sayi1 = scanner.nextInt();
+		System.out.print("İkinci sayıyı girin: ");
+		int sayi2 = scanner.nextInt();
+		System.out.println("Çıkarma sonucu: " + (sayi1 - sayi2));
+
+	}
+
+	static void carpma() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Kaç adet sayıı çarpacaksınız: ");
+		int sayi = scanner.nextInt();
+		int result = 1;
+		for (int i = 1; i <= sayi; i++) {
+			System.out.print(i + ". sayı: ");
+			int sayi1 = scanner.nextInt();
+			result *= sayi1;
+		}
+
+		System.out.println("Çarpma sonucu: " + result);
+	}
+
+	static void bolme() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Birinci sayıyı girin: ");
+		int sayi1 = scanner.nextInt();
+		System.out.print("İkinci sayıyı girin: ");
+		int sayi2 = scanner.nextInt();
+		System.out.println("Bölme sonucu: " + (sayi1 / sayi2));
+
+	}
+
+	static void üslüsayi() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Birinci sayıyı girin: ");
+		int sayi1 = scanner.nextInt();
+		System.out.print("İkinci sayıyı girin: ");
+		int sayi2 = scanner.nextInt();
+		System.out.println("Üslü sayı işlemi sonucu: " + (Math.pow(sayi1, sayi2)));
+	}
+
+	static void faktoriyel() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Faktoriyeli hesaplanak sayıyı girin: ");
+		int sayi = scanner.nextInt();
+		int result = 1;
+		for (int i = 1; i <= sayi; i++) {
+			result *= i;
+
+		}
+		System.out.println("Faktoriyel işlemi sonucu: " + result);
+
+	}
+
+	static void modalma() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Birinci sayıyı girin: ");
+		int sayi1 = scanner.nextInt();
+		System.out.print("İkinci sayıyı girin: ");
+		int sayi2 = scanner.nextInt();
+
+		System.out.println("Mjod alma işlemi sonucu: " + (sayi1 % sayi2));
+	}
+
+	static void cevrealanhesap() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Dikdörtgenin kısa kenarını girin: ");
+		int kisa = scanner.nextInt();
+		System.out.print("Dikdörtgenin uzun kenarını girin: ");
+		int uzun = scanner.nextInt();
+
+		System.out.println("Dikdörtgenin çevresi: " + (2 * (kisa + uzun)));
+		System.out.println("Dikdörtgenin alanı: " + (kisa * uzun));
+	}
+
+}
