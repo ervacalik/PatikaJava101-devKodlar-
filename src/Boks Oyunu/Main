@@ -1,0 +1,14 @@
+
+public class Main {
+	public static void main(String[] args) {
+
+		Fighter f1 = new Fighter("Mark", 15, 120, 90, 20);
+		Fighter r2 = new Fighter("Alex", 10, 95, 100, 30);
+
+		Match match = new Match(f1, r2, 100, 90);
+
+		match.run();
+		
+	}
+
+}
