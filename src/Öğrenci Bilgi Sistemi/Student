@@ -1,0 +1,62 @@
+
+public class Student {
+
+	String name;
+	int stuNo;
+	int classes;
+	Course c1;
+	Course c2;
+	Course c3;
+	double avarage;
+
+	public Student(String name, int stuNo, int classes, Course c1, Course c2, Course c3) {
+
+		this.name = name;
+		this.stuNo = stuNo;
+		this.classes = classes;
+		this.c1 = c1;
+		this.c2 = c2;
+		this.c3 = c3;
+		this.avarage = 0.0;
+	}
+
+	void addBulkExamNote(int note1, int note2, int note3, int sozlü1, int sozlü2, int sozlü3) {
+		if ((note1 >= 0 && note1 <= 100) && (sozlü1 >= 0 && sozlü1 <= 100)) {
+			c1.note = note1;
+			c1.sozlü = sozlü1;
+		}
+		if ((note2 >= 0 && note2 <= 100) && (sozlü2 >= 0 && sozlü2 <= 100)) {
+			c2.note = note2;
+			c2.sozlü = sozlü2;
+		}
+		if ((note3 >= 0 && note3 <= 100) && (sozlü3 >= 0 && sozlü3 <= 100)) {
+			c3.note = note3;
+			c3.sozlü = sozlü3;
+
+		}
+
+	}
+
+	void isPass() {
+
+		this.avarage = ((((c1.note * (100 - c1.sozlüyüzde)) + c1.sozlü * c1.sozlüyüzde)) / 100
+				+ (((c2.note * (100 - c2.sozlüyüzde)) + c2.sozlü * c2.sozlüyüzde)) / 100
+				+ (((c3.note * (100 - c3.sozlüyüzde)) + c3.sozlü * c3.sozlüyüzde)) / 100) / 3;
+		if (this.avarage >= 50) {
+
+			System.out.println("Ortalama: " + this.avarage);
+			System.out.println("Sınıfı geçti.");
+
+		} else {
+			System.out.println("Ortalama: " + this.avarage);
+			System.out.println("Sınıfta kaldı.");
+		}
+	}
+
+	void printNOte() {
+		System.out.println(c1.name + " notu: " + c1.note);
+		System.out.println(c2.name + " notu: " + c2.note);
+		System.out.println(c3.name + " notu: " + c3.note);
+	}
+
+}
