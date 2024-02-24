@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+
+public class DizidekiElemanlariSiralama {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Dizinin boyutu: ");
+		int n = scanner.nextInt();
+
+		System.out.println("Dizinin elemanlarını giriniz...");
+		int[] dizi = new int[n];
+
+		for (int i = 0; i < dizi.length; i++) {
+			System.out.print((i + 1) + ". Elemanı: ");
+			int sayi = scanner.nextInt();
+			dizi[i] = sayi;
+
+		}
+
+		for (int i = 0; i < dizi.length; i++) {
+			for (int j = 0; j < dizi.length - 1 - i; j++) {
+				if (dizi[j] > dizi[j + 1]) {
+					int tmp = dizi[j + 1];
+					dizi[j + 1] = dizi[j];
+					dizi[j] = tmp;
+
+				}
+
+			}
+
+		}
+
+		System.out.print("Sıralama: ");
+		for (int i = 0; i < dizi.length; i++) {
+			System.out.print(dizi[i] + " ");
+		}
+
+	}
+
+}
